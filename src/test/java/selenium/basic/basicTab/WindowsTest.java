@@ -1,5 +1,7 @@
 package selenium.basic.basicTab;
 
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import selenium.basic.BaseTest;
 
-
+@DisplayName("Basic Tab")
 public class WindowsTest extends BaseTest {
     private final Logger logger = LoggerFactory.getLogger("WindowsTest");
     private final TableTest tableTest = new TableTest();
@@ -15,6 +17,7 @@ public class WindowsTest extends BaseTest {
 
 
     @Test
+    @Description("Window tests")
     void should_open_new_windows_and_new_tab() {
         driver.get(BASE_URL + "/windows-tabs.php");
         originalWindow = driver.getWindowHandle();

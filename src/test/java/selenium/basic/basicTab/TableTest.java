@@ -1,5 +1,7 @@
 package selenium.basic.basicTab;
 
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,10 +9,11 @@ import org.openqa.selenium.WebElement;
 import selenium.basic.BaseTest;
 
 import java.util.List;
-
+@DisplayName("Basic Tab")
 public class TableTest extends BaseTest {
 
     @Test
+    @Description("Table tests")
     void should_print_swiss_mountain_higher_than_4000() {
         driver.get(BASE_URL + "/table.php");
         findInTable(driver);

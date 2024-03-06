@@ -1,5 +1,7 @@
 package selenium.basic.basicTab;
 
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -11,9 +13,10 @@ import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@DisplayName("Basic Tab")
 public class AlertsTest extends BaseTest {
     @Test
+    @Description("Alert tests")
     void simple_alert_should_show_message_after_clicking_ok() {
         switchToAlert("simple-alert").accept();
 
@@ -24,6 +27,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test
+    @Description("Alert tests")
     void prompt_alert_should_show_message_after_clicking_ok() {
         Alert promtptAlert = switchToAlert("prompt-alert");
 
@@ -37,6 +41,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test
+    @Description("Alert tests")
     void confirm_alert_should_show_messages_after_clicking_ok_and_cancel() {
         switchToAlert("confirm-alert").accept();
 
@@ -56,6 +61,7 @@ public class AlertsTest extends BaseTest {
     }
 
     @Test
+    @Description("Alert tests")
     void delayed_alert_should_show_message_after_clicking_ok() {
         switchToDelayedAlert("delayed-alert").accept();
 

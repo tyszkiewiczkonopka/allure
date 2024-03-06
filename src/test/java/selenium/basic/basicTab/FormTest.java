@@ -1,5 +1,7 @@
 package selenium.basic.basicTab;
 
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -10,11 +12,12 @@ import java.util.List;
 import java.util.Random;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-
+@DisplayName("Basic Tab")
 public class FormTest extends BaseTest {
     private final Random random = new Random();
 
     @Test
+    @Description("Form tests")
     void should_successfully_sign_in() {
         driver.get(BASE_URL + "/form.php");
 

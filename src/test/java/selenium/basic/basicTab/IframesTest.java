@@ -1,14 +1,17 @@
 package selenium.basic.basicTab;
 
+import io.qameta.allure.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import selenium.basic.BaseTest;
-
+@DisplayName("Basic Tab")
 public class IframesTest extends BaseTest {
 
     @Test
+    @Description("Iframe tests")
     void should_switch_between_iframes() {
         driver.get("http://automation-practice.emilos.pl/iframes.php");
 
