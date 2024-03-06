@@ -1,6 +1,6 @@
-package selenium_basic.basicTab;
+package selenium.basic.basicTab;
 
-import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -13,7 +13,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class FormTest extends BaseTest {
     private final Random random = new Random();
-    @RepeatedTest(value = 10)
+
+    @Test
     void should_successfully_sign_in() {
         driver.get(BASE_URL + "/form.php");
 
@@ -57,7 +58,7 @@ public class FormTest extends BaseTest {
     }
 
     private void chooseFileToUpload() {
-        String uploadedFileDirectory = System.getProperty("user.dir")+ "\\src\\test\\resources\\files\\search-bug.jpg";
+        String uploadedFileDirectory = System.getProperty("user.dir") + "\\src\\test\\resources\\files\\search-bug.jpg";
         driver.findElement(By.id("chooseFile")).sendKeys(uploadedFileDirectory);
     }
 

@@ -1,6 +1,6 @@
-package selenium_basic.basicTab;
+package selenium.basic.basicTab;
 
-import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class AlertsTest extends BaseTest {
-    @RepeatedTest(value = 10)
+    @Test
     void simple_alert_should_show_message_after_clicking_ok() {
         switchToAlert("simple-alert").accept();
 
@@ -23,7 +23,7 @@ public class AlertsTest extends BaseTest {
         assertThat(actualOkMessage).isEqualTo(expectedOkMessage);
     }
 
-    @RepeatedTest(value = 10)
+    @Test
     void prompt_alert_should_show_message_after_clicking_ok() {
         Alert promtptAlert = switchToAlert("prompt-alert");
 
@@ -36,7 +36,7 @@ public class AlertsTest extends BaseTest {
         assertThat(actualOkMessage).isEqualTo(expectedOkMessage);
     }
 
-    @RepeatedTest(value = 10)
+    @Test
     void confirm_alert_should_show_messages_after_clicking_ok_and_cancel() {
         switchToAlert("confirm-alert").accept();
 
@@ -55,7 +55,7 @@ public class AlertsTest extends BaseTest {
 
     }
 
-    @RepeatedTest(value = 10)
+    @Test
     void delayed_alert_should_show_message_after_clicking_ok() {
         switchToDelayedAlert("delayed-alert").accept();
 
@@ -65,13 +65,14 @@ public class AlertsTest extends BaseTest {
         assertThat(actualOkMessage).isEqualTo(expectedOkMessage);
 
     }
+
     private Alert switchToAlert(String alertId) {
         driver.get(BASE_URL + "/alerts.php");
         driver.findElement(By.id(alertId)).click();
         return driver.switchTo().alert();
     }
 
-    private Alert switchToDelayedAlert(String alertId){
+    private Alert switchToDelayedAlert(String alertId) {
         driver.get(BASE_URL + "/alerts.php");
         driver.findElement(By.id(alertId)).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

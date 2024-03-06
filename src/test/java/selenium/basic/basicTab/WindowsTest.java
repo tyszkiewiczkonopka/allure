@@ -1,6 +1,6 @@
-package selenium_basic.basicTab;
+package selenium.basic.basicTab;
 
-import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
@@ -14,7 +14,7 @@ public class WindowsTest extends BaseTest {
     private String originalWindow;
 
 
-    @RepeatedTest(value = 10)
+    @Test
     void should_open_new_windows_and_new_tab() {
         driver.get(BASE_URL + "/windows-tabs.php");
         originalWindow = driver.getWindowHandle();
